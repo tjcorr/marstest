@@ -22,8 +22,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          echo ${{ env.GITHUB_SHA }}
-          echo ${{ github.head_ref }}
+          echo ${{ github.sha }} 
+          echo ${{ github.event.pull_request.base.sha }}
           
       - name: Dump GitHub context
         id: github_context_step
